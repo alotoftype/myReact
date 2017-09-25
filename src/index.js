@@ -1,15 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import SearchBar from './components/search_bar'
+// writing my firt react component
+const Key = process.env.key
 
-import App from './components/app';
-import reducers from './reducers';
+const API_KEY = Key
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const App = () => {
+    return (
+    <div>
+    <SearchBar />
+    </div> )
+}
+let application = document.querySelector('.container')
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+//bringing my new component to the dom
+ReactDOM.render(<App />, application)
